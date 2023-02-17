@@ -1,0 +1,44 @@
+
+Algortihme "Le tri par propagation"
+Variable : numérique = N,SauveN,I;
+         : indicée = tab[N] d'élément numérique 
+  
+Debut 
+//Saisir le veceteur 
+
+Afficher "Quelle est la taille du vecteur (strictement supérieur à 5)" 
+Saisir N
+tantque N < 5
+ Afficher "Taille non conforme, recommencer"
+fintantque
+
+SauveN <- N 
+
+Pour I allant de 1 à N 
+  Afficher "Veuillez saisir la valeur de la case de rang", I
+  Saisir tab[I]
+Fpour
+
+//afficher le tableau a trié
+Afficher "Voici le tableau à trier"
+Pour I allant de 1 à N 
+  Afficher Tab[I]
+Fpour
+
+//Traitement
+tant que N > 1
+  Pour I allant de 1 à N-1
+  si tab[I] > tab[I+1] alors Temp <-- Tab[I]
+                             Tab[I] <--tab[I+1]
+							 Tab[I+1] <-- Temp
+  Fpour
+  
+  N <-- N-1
+FTantque
+//Affichage du tableau trié
+Afficher "Voici le tableau trié"
+Pour I allant de 1 à SauveN 
+  Afficher Tab[I]
+Fpour
+
+										   

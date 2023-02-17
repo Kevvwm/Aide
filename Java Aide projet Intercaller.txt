@@ -1,0 +1,66 @@
+package MonPackage;
+
+public class intercaller {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	  // Déclaration des variables 
+    int Tab[], N, I, J, Nb; 
+   // Saisie de la taille du vecteur
+   N = Saisie.lire_int("Quelle est la taille du vecteur ?");
+   while (N <= 4)
+   {
+     System.out.println("Taille incorrecte, on recommence");
+     N = Saisie.lire_int("Quelle est la taille du vecteur ?");
+   }
+   // Instanciation du tableau
+     Tab = new int [N];
+   // Remplissage du vecteur
+   System.out.println(" Vous allez remplir le vecteur avec des nombres croissants");
+   System.out.println();
+  for(I = 0; I < N-1; I++)
+  {
+    Tab[I]= Saisie.lire_int(" Veuillez saisir une valeur");
+    
+  }
+
+  // Affichage du tableau avant insertion 
+  for(I = 0; I < N-1; I++)
+  {
+     System .out.print(Tab[I]+"  ");
+    
+  }
+
+  // Saisie du nombre à intercaler 
+  System.out.println();
+  Nb = Saisie.lire_int(" Quel est le nombre à intercaler ?");
+  
+  // Recherche de la position pour intercaler le nombre
+  I = 0;
+  while ((I < N-1) && (Nb > Tab[I]))
+  {
+      I++;
+  }
+  
+  // Placement du nombre avec éventuellement décalage
+  if ( I == N-1)  Tab[N-1] = Nb;
+  else 
+  {
+      for (J=N-1; J > I; J-- )
+      {
+         Tab[ J] = Tab[J-1] ;
+      }
+      Tab[I] = Nb ;
+  }
+ 
+  // Affichage du tableau après  insertion 
+  System.out.println();
+  for(I = 0; I < N; I++)
+  {
+     System.out.print(Tab[I]+"  ");
+    
+  }
+
+}
+
+}

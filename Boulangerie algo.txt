@@ -1,0 +1,69 @@
+Une boulangerie est ouverte de 7h à 13h et de 16h à 19h sauf le dimanche après-midi 
+et le lundi toute la journée. L'utilisateur saisit le jour de la semaine (à vérifier)
+et l'heure et vous lui indiquez si la boulangerie est ouverte ou fermée
+
+Algorithme "La boulangerie"
+Variable  indicée : Semaine [7] de type CC
+Variables : CC = Jour, I
+            Numérique = Heure
+			Booléen : Boucle, Ouverture
+
+//Algorithme principal
+
+Début
+  (* Le vecteur Semaine est pré enregistré *)
+  Semaine = {"Lundi", "Mardi","Mercredi", "Jeudi", "vendredi", "Samedi","Dimanche"}
+
+  (* Saisie et contrôle de saisie du jour *)
+  Boucle <-- True
+  I <-- 1
+  TantQue (Boucle = True)
+     Afficher " Quel est le jour de la semaine recherché ?"
+     Saisir Jour
+     TantQue ((I < 7 ET Jour <> Semaine[I])
+        I <-- I + 1
+     FinTantQue
+     Si (I = 7)
+        Afficher "Le jour ", Jour, " n'existe pas ou est mal orthographié"
+        I <-- 0
+     Sinon Boucle <-- False
+     FinSi
+   FinTantQue
+
+   (* Saisie et contrôle de saisie de l'heure *)
+   Afficher "Veuillez saisir l'heure à laquelle vous souhaitez vérifier si la boulangerie est ouverte :"
+   Saisir Heure  
+   TantQue (Heure < 0) ou (Heure > 23)
+      Afficher "Erreur de saisie, veuillez saisir une heure comprise entre 0 et 23 "
+      Saisir heure
+   FinTanque
+
+   (* Appel de la fonction boulangerie avec comme paramètres les variables "Jour" et "Heure" *)
+   Ouverture <-- Boulangerie(Jour, Heure)
+   
+   (* Affichage du résultat *)
+   Si (Boulangerie = True) Alors Afficher "La boulangerie est ouverte"
+   Sinon Afficher "La boulangerie est fermée"
+   FinSi
+Fin
+
+//Algorithme de la fonction
+
+Fonction Boulangerie(C.C JourBis, Entier HeureBis) : booléen
+Variables Locales : Booléen : Ouverture
+
+Début
+   Si (JourBis = "Lundi")
+      Alors Ouverture <-- False
+      Sinon si (JourBis = "Dimanche") Alors
+                                         Si (Heure >= 7 ET Heure <= 13) Alors Ouverture <-- True
+                                                                        Sinon Ouverture <-- False
+                                         FinSi
+                                      Sinon Si (Heure >= 7 ET Heure <= 13) ET (Heure >= 16 ET Heure <= 19) Alors Ouverture <-- True
+                                                                                                           Sinon Ouverture <-- False
+                                            FinSi
+            FinSi
+   FinSi
+
+   Retourner Ouverture
+Fin

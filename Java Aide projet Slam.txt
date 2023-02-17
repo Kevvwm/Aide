@@ -1,0 +1,22 @@
+package MonPackage;
+
+public class VecteurNom {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+String NomSaisi;
+int I;
+String SIO[]= {"Kevin","Léon","Abinash","Sara","Amath","Yanis"};
+
+for (int I1=0; I1< SIO.length; I1++) System.out.println(SIO[I1]+" "+"\n");
+NomSaisi = Saisie.lire_String("Quel nom recherchez-vous");
+I = 0;
+while ((I<6) && (NomSaisi.equals(SIO[I])==false))
+{
+	I++;
+}
+if (I==6) System.out.println("Le nom n'est pas trouvé");
+else System.out.println("Le nom est dans le vecteur");
+	}
+
+}

@@ -1,0 +1,40 @@
+Algorithme "intercaler un nombre dans un vecteur"
+Variables indicée : Tab[N] d'élement numériques
+Variables : Numerique = N, I, nb,J
+Debut
+     Afficher "Quelle est la taille du vecteur"
+	 Saisir N
+	 Tantque N<=4
+	 Afficher "La taille est trop petite, recommencez"
+	 SAisir N
+	 Fintantque
+	 
+	 //REmplissage du vecteur
+	 Affichez "Vous allez remplir le vecteur avec les nombres croissants"
+	 Pour I Allant de 1 à N-1
+	    Afficher "Veuillez saisir une valeur"
+		Saisir Tab[I]
+	 finPour
+	 
+	 //Saisie du nombre à intercaller
+	 Afficher "Quel est le nombre à intercaller?"
+	 Saisir nb
+	 
+	 //Recherche de la position pour intercaller le nombre
+	 I <-- 1
+	 Tantque (I < N) ET (nb > Tab[I])
+	 I <-- I+1
+	 Fintantque
+	 
+	 //Placement du nombre avec éventuellement décalage
+	 Si I = N Alors //Placement en derniere case 
+	              Tab[N] = nb
+			  Sinon //Décallage puis placement
+                 Pour J allant de I à N-1
+                     Tab[J + 1] <-- Tab[J]
+                  Fpour
+                  Tab[I] <-- nb
+     Fsi
+Fin	 
+	 
+	 

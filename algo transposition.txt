@@ -1,0 +1,52 @@
+Algorithme "Tri par transposition"
+Variable : numérique = N, I, temp, J
+         : indicée = tab[]d'élément numérique
+		 : booleenne = test
+Debut 
+//Saisi du vecteur 
+
+Afficher "Quelle est la taille de votre vecteur ?"
+Saisir N
+tantque N < 5 
+   Afficher "taille non conforme"
+fintantque
+
+
+//Affichage du vecteur 
+
+Afficher "Voici le tableau a trier"
+Pour I allant de 1 à N 
+      Afficher tab[I]
+fpour
+
+I <-- 1
+//tri du tableau 
+
+tantque I < N
+ 
+  si tab[I] > tab[I+1]
+  alors temp <-- Tab[I]
+        Tab[1] <-- Tab[I+1]
+        Tab[I+1] <-- temp
+   
+   //retour en arriere
+           tantque J >= 1
+                J <-- I - 1
+                si Tab[J] > tab[J+1] 
+                alors perm <--Tab[J]
+                    Tab[J] <-- Tab[J+1]
+                    Tab[J+1] <-- perm
+		            J <-- J-1 
+                Sinon J <-- 0
+                Fsi		 
+           Ftantque
+	Fsi
+	
+I <-- I + 1
+Fintantque
+
+//Affichage du tableau trié
+Afficher "Voici le tableau trié"
+Pour I allant de 1 a N
+      Afficher Tab[I]
+Fpour

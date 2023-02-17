@@ -1,0 +1,67 @@
+package MonPackage;
+
+public class DistanceInterVille 
+{
+	public static void main(String[] args)
+	{
+		//Déclaration des variables
+		int ville1, ville2, Distance;
+		boolean test;
+		String Ville[] = {"Brest", "Grenoble", "Lille", "Lyon", "Marseille", "Nantes", "Paris",
+		"Rennes", "Strasbourg", "Toulouse"};
+		int Mat[][] = { {0,996,723,890,1286,305,564,245,1026,884},{0,0,750,104,286,711,576,747,505,543},
+		{0,0,0,668,979,593,224,515,524,905},{0,0,0,0,316,607,472,645,434,467},{0,0,0,0,0,890,749,938,750,400},
+		{0,0,0,0,0,0,386,106,832,559},{0,0,0,0,0,0,0,348,447,681},{0,0,0,0,0,0,0,0,799,665},
+		{0,0,0,0,0,0,0,0,0,901},{0,0,0,0,0,0,0,0,0,0}};
+		 
+		//Affichage des villes disponibles
+		 System.out.println("VILLE");
+		 for (int I = 0; I< Ville.length; I++) System.out.println(Ville [I]+" "+"\n");
+		 
+		  for(int l=0;l<10;l++) {
+			  for(int c=0;c<10;c++)
+				  System.out.print(Mat[l][c]+"\t");
+			  System.out.print("\n");
+		  }
+		  
+		 //Saisie de la ville de départ
+		ville1 = Saisie.lire_int("Veuillez saisir votre premiere ville");
+		
+		//Saisie de la ville d'arrivée
+		ville2 = Saisie.lire_int("Veuillez saisir votre deuxieme ville");
+		test = true;
+		
+		while (test == true)
+	
+		{
+		while ((I<10) && (ville1.equals(Ville[I])==false))
+		{
+			I++;
+		}
+		
+		if (I==10)
+		{
+			System.out.println("Ville non existant dans le tableau");
+		    I = 0;
+		}
+		
+		else 
+		{
+			System.out.println("Ville trouvée");
+		    test = false;
+		}
+		
+		}
+	
+			
+		//Calcul de la distance
+		
+		//if (I<J) Distance = Mat[I][J] else Distance = Mat[J][I];
+		
+		//Affichage du résultat
+		
+		//System.out.println("La distance qui sépare " + Ville[I] + " de " + Ville[J] + " est de " + Distance;
+		
+	}
+
+}

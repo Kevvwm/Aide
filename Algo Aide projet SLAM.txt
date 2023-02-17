@@ -1,0 +1,21 @@
+Algorithme : Vecteur SIO
+Variable indicée : SIO [6] d'élements de type CC
+Variable : numérique 
+          CC : NomSaisi
+
+Debut 
+     Affichier "Quel nom recherchez-vous"
+     Saisir NomSaisi
+	 I <-- 1
+	 TantQue (I <= 6) ET (NomSaisi = SIO[I])
+	     I <-- I+1
+	 FtantQue
+	 
+	 Si I > 6 Alors Affichier "Non pas trouvé"
+	          Sinon Affichier "Nom présent dans le tableau"
+	 Fsi
+	 
+	OU
+	
+	Si NomSaisi = SIO[I] Alors Afficher "Nom présent dansl le tableau"
+	                     Sinon Afficher "Nom pas trouvé
